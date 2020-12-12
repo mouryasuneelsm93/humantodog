@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>age</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+	<style>
+		.container1
+		{
+			background-color: rgba(0,0,0,.7);
+			padding-left: 0px;
+			padding-right: 0px;
+
+		}
+		h1
+		{
+			text-align:center;
+			padding-top: 2%;
+			padding-bottom: 2%;
+			color:#666;
+			font-size: 50px;
+			text-transform: uppercase;
+			text-shadow: 1px 2px red;
+			font-weight: bold;
+			
+			font-family: 'Texturina', serif;
+		}
+		.container2
+		{
+			width:100%;
+			background-image: url(dog.jpg);
+			height: 640px;
+			background-size: cover;
+			padding-left: 0px;
+			padding-right: 0px;
+
+		}
+		.button
+		{
+			width:100%;
+
+			height:auto;
+		}
+		.input
+		{
+			width:200px;
+
+			height:50px;	
+		}
+		.text-right
+		{
+			color:white;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			font-family: 'Texturina', serif;
+		}
+		
+	</style>
+</head>
+<body onload="zero()">
+
+<div class="container-fluid container2">
+	<div class="container-fluid container1">
+		<h1>Human/Dog Age Converter</h1>
+		<p class="text-danger"><marquee>This site convert the human age into dog age</marquee> </p>
+	</div>
+
+
+	<div class="row p-3">
+		<div class="col-sm-3">
+			<div class="text-right">Human Age</div>
+		</div>
+		<div class="col-sm-4 input">
+			<input type="text" class="form-control " placeholder="Human Age" id="result">
+		</div>
+		
+	</div>
+	<div class="row p-3">
+		<div class="col-sm-3">
+			<div class="text-right">Dog Age</div>
+		</div>
+		
+		<div class="col-sm-2 input">
+			<input type="text" class="form-control" placeholder="Year" id="result1" readonly>
+		</div>
+		<div class="col-sm-2 input">
+			<input type="text" class="form-control" id="result2" placeholder="month" readonly>
+		</div>
+	</div>
+
+	<div class="row p-3">
+		<div class="col-sm-3">
+			
+		</div>
+		
+		<div class="col-sm-2 input">
+				<input type="button" value="click" onclick="convert()"  class="button btn btn-primary">
+
+		</div>
+		<div class="col-sm-2">
+			<input type="button" value="Reset" onclick="reset()"  class="button btn btn-danger">
+		</div>
+	</div>
+</div>
+
+<script>
+	function convert()
+	{
+		var a=document.getElementById("result").value;
+
+		if(result.value.length == 0)
+		{
+			alert("please enter the age first");
+		}
+		else if(a>0&&a<=21)
+		{
+			a=a/10.5;
+			b1=parseInt(a);
+			b3=a-b1;
+			b4=b3*12;
+			console.log(Math.floor(b4));
+		document.getElementById("result1").value=b1+' '+'year';
+		document.getElementById("result2").value=Math.floor(b4)+' '+'month';	
+		}
+		
+		
+		else 
+		{
+		a=a-21;		
+		b=a/4;
+		b1=parseInt(b);
+		b3=b-b1;
+		b4=b3*12;
+		b1=b1+2;
+		document.getElementById("result1").value=b1+' '+'year';
+		document.getElementById("result2").value=Math.floor(b4)+' '+'month';
+		}
+
+	}
+	function reset()
+	{
+		document.getElementById("result1").value="";
+		document.getElementById("result2").value="";
+		document.getElementById("result").value="";
+		
+	}
+	function zero()
+	{
+		document.getElementById("result").value="";
+		document.getElementById("result1").value="";
+		document.getElementById("result2").value="";
+	}
+</script>
+</body>
+</html>
